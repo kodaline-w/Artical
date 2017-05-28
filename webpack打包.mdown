@@ -1,2 +1,32 @@
-# webpake的简单分享技巧
-# 11
+# webpaker入门简单技巧分享
+
+### 相信学习webpack的同学很多都是从网上找的教程看的，有视频也会有文章，但webpack的更新实在是太快了，学的时候感觉好好的，怎么一用就全是红色的错误呢，webpack2.0的大幅改动功不可没,这里说的只是入门简单一些改变或者技巧，更深入的学习可参考英文官网
+
+1. 首先安装webpack要安装在全局环境也就是后面加  -g 然后再在使用的文件夹中安装
+
+2.  比如要运行一个文件，里面引用相应的依赖项如：webpack hello.js hello.bundle.js --module-bind "css=style-loader!css- loader"最后windows用户一定要使用双引号，mac用户好像可以使用单引号
+
+3.  webpack在1.0时换起可用操作直接命令行中输入webpack就行，在2.0，改为webpack --help
+
+4.  简单操作总结webpack 开发环境下编译（打包）；
+    webpack -p 生产环境下编译（压缩）；
+    webpack -w 文件监听；
+    webpack -d 开启（生成）source maps（调试）；可以连写-wdp
+    webpack.config.js 的配置loaders时引用的名称必须加loader，不能简写
+
+5.  在配置文件中配置es2015在2.0中不可以使用了，要在根目录建一个.babelrc文件，windows下生成.babelrc文件默认是生成不了的，
+    要.babelrc.输入前后加点
+    
+6.  entry——用于设置 webpack 执行打包文件的入口，是一个数组
+    output——用于指定生成文件的路径以及文件名等
+	path——指定生成文件路径 1.0版本直接写路径'./dist'，2.0变成了这样path: __dirname + '/dist',
+	publicPath——指定域名公共路径
+	filename——指定生成文件的名称
+	module——主要用于配置 loaders
+	loaders——用于配置对应后缀的文件使用何种加载器进行处理
+	test——使用正则表达式来指定某种特定的文件类型
+	exclude——排除某个文件夹下的文件进行处理
+	loader——指定相应的加载器，多个加载器使用 ! 
+	query——指定加载器的配置信息，也可以使用 ? 直接连接在 loader 后面
+
+ [webpack 文档](http://webpack.github.io/docs/ "webpack") 
