@@ -16,9 +16,9 @@
 
 5.  在配置文件中配置es2015在2.0中不可以使用了，要在根目录建一个.babelrc文件，windows下生成.babelrc文件默认是生成不了的，
     要.babelrc.输入前后加点
-    
-6.  entry——用于设置 webpack 执行打包文件的入口，是一个数组
-    output——用于指定生成文件的路径以及文件名等
+
+6.  * entry——用于设置 webpack 执行打包文件的入口，是一个数组
+    * output——用于指定生成文件的路径以及文件名等
 	path——指定生成文件路径 1.0版本直接写路径'./dist'，2.0变成了这样path: __dirname + '/dist',
 	publicPath——指定域名公共路径
 	filename——指定生成文件的名称
@@ -29,4 +29,4 @@
 	loader——指定相应的加载器，多个加载器使用 ! 
 	query——指定加载器的配置信息，也可以使用 ? 直接连接在 loader 后面
 
- [webpack 文档](http://webpack.github.io/docs/ "webpack") 
+ [webpack 官方文档](http://webpack.github.io/docs/ "webpack") 
