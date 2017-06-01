@@ -25,7 +25,7 @@
 7. 复制数组`var arr=[1,2,3];var arr2=Array.from(arr);`这样复制数组简化了for循环复制还有一种简写方式`var arr=[1,2,3];
 var arr2=[...arr];`
 8. for of循环:可以循环数组不能循环对象，主要用于循环map对象`var arr=['a','b','c'];`使用for of循环出来的是a,b,c
-9.单例模式下的语法简洁了`var name='张三',age=23;var person={
+9. 单例模式下的语法简洁了`var name='张三',age=23;var person={
 	name,
 	age,
 	showName(){
