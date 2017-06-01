@@ -47,4 +47,4 @@ var n1=new Person('aaa','22');
 var n2=new Worker('bbb','33');
 console.log(n1.showName())`
 11. 模块化：导出`var a=12;export default a`;引用模块`import modA from'./a.js'`其中.js可以不写
-12最后说下现在很多浏览器还不支持ES6的语法，所以想要使用的话比较推荐babel，可以直接引用babel的文件，也可以用webpack安装babel插件，要安装`babel-loader;babel-core;babel-preset-es2015`,知道了这些ES6基本就入门了
+12. 最后说下现在很多浏览器还不支持ES6的语法，所以想要使用的话比较推荐babel，可以直接引用babel的文件，也可以用webpack安装babel插件，要安装`babel-loader;babel-core;babel-preset-es2015`,知道了这些ES6基本就入门了
