@@ -4,18 +4,47 @@
 
 ### 那具体学习ES6有什么用呢？首先node.js就使用的是ES6语法，其次在node.js下面的很多打包类的工具及插件也使用的是ES6的语法，我一会分为两部分说，一是简单说下新的语法，二是说下babel的用法
 
-1. >http://babeljs.io 中点击try it out可以进行在线编译（主要用于测试）
+1. http://babeljs.io 中点击try it out可以进行在线编译（主要用于测试）
 
 2. 新增了let变量，性质和var一样，但区别是let只能在块作用域内使用，也就是具备了块级作用域，而var是在函数作用域，第二let不允许重复定义了，let=2；let=3，是错误的。
 
 3. const定义常量，开始时必须赋值，一旦赋值再也不能修改了
 
-4. 字符串模板（1前面的那个符号）`javascript
+4. 字符串模板（1前面的那个符号)
   var a='你好';
-  var str=`0000${a}000000`;
-` 字符串里会变成你好
+  var str=`0000${a}000000`;(字符串被1前面的那个符号包裹)
+ 字符串里会变成你好
 
 5. 结构赋值`
 	var [a,b,c]=[1,2,3];
-	console.log(a,b,c)
-	`
+	console.log(a,b,c);
+	var {a,b,c}={a:1,b:2,c:3};
+	console.log(a,b,c);
+	`都是一样的，json中位置无关`var [a,[b,c],d]=[1,[2,3],4]`结构赋值还可以给默认值`var {time=0,id=0}={}`
+6. 箭头函数`window.onload=()=>{}`箭头函数里的this指向window，arguments不能使用
+7. 复制数组`var arr=[1,2,3];var arr2=Array.from(arr);`这样复制数组简化了for循环复制还有一种简写方式`var arr=[1,2,3];
+var arr2=[...arr];`
+8. for of循环:可以循环数组不能循环对象，主要用于循环map对象`var arr=['a','b','c'];`使用for of循环出来的是a,b,c
+9.单例模式下的语法简洁了`var name='张三',age=23;var person={
+	name,
+	age,
+	showName(){
+	return this.name
+	}
+} `
+10. 面向对象的新方法class,constructor  `
+class Person{
+	constructor (name,age){
+		this.name=name;
+		this.age=age;
+	}
+	showName(){
+		return this.name;
+	}
+}
+class Worker extends Person{};
+var n1=new Person('aaa','22');
+var n2=new Worker('bbb','33');
+console.log(n1.showName())`
+11. 模块化：导出`var a=12;export default a`;引用模块`import modA from'./a.js'`其中.js可以不写
+12最后说下现在很多浏览器还不支持ES6的语法，所以想要使用的话比较推荐babel，可以直接引用babel的文件，也可以用webpack安装babel插件，要安装`babel-loader;babel-core;babel-preset-es2015`,知道了这些ES6基本就入门了
